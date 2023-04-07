@@ -1,6 +1,7 @@
 /// Universal Gravitational Constant
 const G: f64 = 6.67430e-11;
 
+/// The struct represented <b>Heavenly Object</b>.
 #[derive(Debug)]
 pub struct HeavenlyObject {
     name: String,
@@ -18,6 +19,7 @@ impl HeavenlyObject {
     }
 }
 
+/// Vector with a set of <b>Heavenly Object</b> in the Solar System
 pub fn solar_system() -> Vec<HeavenlyObject> {
     vec![
         HeavenlyObject::new("Sun", 1_988_500e24, 695_700_f64),
@@ -33,12 +35,17 @@ pub fn solar_system() -> Vec<HeavenlyObject> {
 }
 
 pub trait HeavenlyBody {
+    fn name(&self) -> String;
     fn mass(&self) -> f64;
     fn average_radius(&self) -> f64;
     fn escape_speed(&self, distance: f64) -> f64;
 }
 
 impl HeavenlyBody for HeavenlyObject {
+    fn name(&self) -> String {
+        self.name.clone()
+    }
+
     fn mass(&self) -> f64 {
         self.mass
     }
