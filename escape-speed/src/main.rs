@@ -5,5 +5,5 @@ fn main() {
         println!("{:?}", ho);
         println!("Escape Speed: {}", ho.escape_speed(0_f64));
         println!();
-    })
+    });
 }

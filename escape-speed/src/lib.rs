@@ -48,6 +48,6 @@ impl HeavenlyBody for HeavenlyObject {
     }
 
     fn escape_speed(&self, distance: f64) -> f64 {
-        f64::sqrt((G * self.mass) / (self.radius + distance))
+        f64::sqrt((G * self.mass) / ((self.radius + distance) * 1e3))
     }
 }
